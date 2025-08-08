@@ -3,6 +3,8 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400|Passion+One:400");
 
 
+
+
 /* Reset */
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -44,7 +46,7 @@
 		-webkit-text-size-adjust: none;
 	}
 
-/* Navbar */
+/* Navbar original (kept, but will be further overridden by the variables/modern styles) */
 .navbar {
   background-color: #202024;
   color: rgba(255, 255, 255, 0.75);
@@ -58,6 +60,7 @@
   padding: 1em 2em;
 }
 
+/* Original nav class (kept for compatibility) */
 .nav {
 	background-color: #202024;
 	color: rgba(255, 255, 255, 0.75);
@@ -135,9 +138,10 @@
 
 /* Type */
 
+	/* Set a sensible default font stack — HTML loads Inter + Passion One. */
 	body, input, select, textarea {
-		color: rgba(255, 255, 255, 0.75);
-		font-family: "Source Sans Pro", sans-serif;
+		color: rgba(255, 255, 255, 0.95);
+		font-family: "Inter", "Source Sans Pro", sans-serif;
 		font-size: 14pt;
 		font-weight: 300;
 		line-height: 1.65;
@@ -1214,6 +1218,7 @@
 		justify-content: center;
 		padding: 8em 4em 6em 4em;
 		min-height: 70vh;
+		/* background image path relative to assets/css/main.css -> ../../images/banner.jpg */
 		background-image: url("../../images/banner.jpg");
 		background-position: center;
 		background-size: cover;
@@ -1456,3 +1461,396 @@
 		.footer-icons {
 			font-size: 35px; 
 		}
+/* Flex */
+
+.flex {
+	display: -ms-flexbox;
+	-ms-flex-wrap: nowrap;
+	-ms-flex-pack: justify;
+	-ms-flex-align: stretch;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: nowrap;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-moz-justify-content: space-between;
+	-webkit-justify-content: space-between;
+	-ms-justify-content: space-between;
+	justify-content: space-between;
+	-moz-align-items: stretch;
+	-webkit-align-items: stretch;
+	-ms-align-items: stretch;
+	align-items: stretch;
+}
+
+	.flex.flex-3 .flex-item {
+		/*-ms-flex: 0 1 auto;*/
+		-ms-flex-preferred-size: 30%;
+		-moz-flex-basis: 30%;
+		-webkit-flex-basis: 30%;
+		-ms-flex-basis: 30%;
+		flex-basis: 30%;
+	}
+
+		.flex.flex-3 .flex-item.left {
+			text-align: right;
+		}
+
+	@media screen and (max-width: 980px) {
+
+		.flex {
+			-ms-flex-wrap: wrap;
+			-moz-flex-wrap: wrap;
+			-webkit-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+		}
+
+			.flex.flex-3 .flex-item {
+				-ms-flex-preferred-size: 100%;
+				-moz-flex-basis: 100%;
+				-webkit-flex-basis: 100%;
+				-ms-flex-basis: 100%;
+				flex-basis: 100%;
+			}
+
+				.flex.flex-3 .flex-item.left {
+					text-align: right;
+				}
+
+	}
+	/* Image2 */
+
+	.image2 {
+		border: 0;
+		display: inline-block;
+		position: relative;
+	}
+
+		.image2 img {
+			display: block;
+		}
+
+		.image2.left, .image2.right {
+			max-width: 40%;
+		}
+
+			.image2.left img, .image2.right img {
+				width: 100%;
+			}
+
+		.image2.left {
+			float: left;
+			padding: 0 1.5em 1em 0;
+			top: 0.25em;
+		}
+
+		.image2.right {
+			float: right;
+			padding: 0 0 1em 1.5em;
+			top: 0.25em;
+		}
+
+		.image2.fit {
+			display: block;
+			margin: 0 0 2em 0; 
+			width: 100%;
+		}
+
+			.image2.fit img {
+				width: 100%;
+			}
+
+			.image2.round {
+				display: flex;
+				justify-content: center; /* Center horizontally */
+				align-items: center; /* Center vertically */
+			}
+			
+			.image2.round img {
+				border-radius: 50%;
+				width: 25%; 
+				height: auto; 
+			}
+
+		.image2.main {
+			display: block;
+			margin: 0 0 3em 0;
+			width: 100%;
+		}
+
+			.image2.main img {
+				width: 100%;
+			}
+
+/* ---------- END ORIGINAL STYLES ---------- */
+
+
+/* ===================== */
+/* ENHANCEMENTS & THEME VARIABLES (APPENDED) */
+/* ===================== */
+
+/* = Variables & Theme = */
+:root{
+  --bg: #202024;
+  --bg-2: #1b1b1f;
+  --text: rgba(255,255,255,0.95);
+  --muted: rgba(255,255,255,0.75);
+  --accent-1: #70c7be;
+  --accent-2: #7f92cf;
+  --accent-gradient: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --glass-blur: 8px;
+  --card-radius: 12px;
+  --nav-height: 68px;
+}
+
+/* Light theme overrides */
+:root[data-theme="light"]{
+  --bg: #f6f7fb;
+  --bg-2: #ffffff;
+  --text: #111213;
+  --muted: rgba(17,18,19,0.75);
+  --glass-bg: rgba(255,255,255,0.72);
+  --glass-border: rgba(17,18,19,0.06);
+}
+
+/* Smooth transitions when theme changes */
+html, body {
+  transition: background-color 250ms ease, color 250ms ease;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Use Inter for body, Passion One remains for the main heading */
+body, input, select, textarea {
+  font-family: "Inter", "Source Sans Pro", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.8;
+}
+
+/* Brand in the nav */
+.nav-brand {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 1rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.2px;
+}
+
+/* Sticky navbar */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  transition: background 300ms ease, box-shadow 300ms ease, backdrop-filter 300ms ease;
+}
+
+/* shadow when scrolled (dark mode default) */
+.nav.scrolled {
+  background: rgba(15,15,18,0.82);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(2,6,12,0.45);
+}
+
+/* shadow in light theme */
+html[data-theme="light"] .nav.scrolled {
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(10,10,12,0.06);
+}
+
+/* nav-list default layout */
+.nav-list {
+  display: flex;
+  gap: 1.1rem;
+  margin-left: auto;
+  align-items: center;
+  list-style: none;
+}
+
+/* nav links style */
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.35rem 0.25rem;
+  font-weight: 500;
+}
+.nav-link:hover { color: var(--text); }
+
+/* Mobile nav toggle (hidden on desktop) */
+.nav-toggle {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.12rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  padding: 0.35rem;
+}
+
+/* theme toggle (visible on desktop & mobile) */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.12rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  margin-left: 0.6rem;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.theme-toggle:hover {
+  color: var(--text);
+  transform: rotate(18deg);
+}
+
+/* Banner glass card */
+.banner-glass{
+  display: inline-block;
+  max-width: 980px;
+  padding: 1.6rem 2rem;
+  border-radius: var(--card-radius);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: 0 6px 24px rgba(2,6,12,0.45);
+  text-align: center;
+}
+
+/* Hero typography */
+#banner h1 {
+  font-family: 'Passion One', cursive;
+  font-size: 3.5rem;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+}
+#banner p { color: var(--muted); font-size: 1.05rem; }
+
+/* Accent gradient buttons */
+.button {
+  background: var(--accent-gradient);
+  border: 0;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(11,12,20,0.45);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  border-radius: 8px;
+}
+.button:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(11,12,20,0.5); }
+
+/* style2 & style3 alternate gradients */
+.button.style2 { background: linear-gradient(135deg, #7f92cf, #92a2d6); }
+.button.style3 { background: linear-gradient(135deg, #9d7ed0, #ab91d7); }
+
+/* Box hover & image effects */
+.box { transition: transform 220ms ease, box-shadow 220ms ease; border-radius: 10px; overflow: hidden; }
+.box:hover { transform: translateY(-8px); box-shadow: 0 18px 40px rgba(2,6,12,0.45); }
+.box .image.fit img { transition: transform 300ms ease, filter 300ms ease; filter: grayscale(25%); }
+.box:hover .image.fit img { filter: grayscale(0); transform: scale(1.03); }
+
+/* Reveal on scroll: initial vs active */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) rotateX(.5deg);
+  transition: opacity 700ms cubic-bezier(.2,.9,.3,1), transform 700ms cubic-bezier(.2,.9,.3,1);
+  will-change: opacity, transform;
+}
+.reveal.active { opacity: 1; transform: none; }
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 0;
+  display: grid;
+  place-items: center;
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 10px 26px rgba(3,6,12,0.45);
+  cursor: pointer;
+  transform: translateY(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease, transform 240ms ease;
+  z-index: 9999;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* Footer icon hover */
+.footer-icons i { transition: transform 200ms ease, color 200ms ease; }
+.footer-icons:hover i { color: var(--accent-1); transform: scale(1.14); }
+
+/* Focus outlines for keyboard users */
+body.show-focus-outlines :focus { outline: 3px solid rgba(130,200,190,0.18); outline-offset: 3px; }
+
+/* Responsive: mobile nav and spacing */
+@media (max-width: 880px) {
+  .nav-list { display: none; } /* hide links by default on smaller screens */
+  .nav.open .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(var(--nav-height) + 8px);
+    right: 12px;
+    background: rgba(10,10,12,0.9);
+    border-radius: 10px;
+    padding: 0.75rem;
+    gap: 0.35rem;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  }
+  .nav-toggle { display: inline-flex; margin-left: auto; }
+  .theme-toggle { display: inline-flex; margin-left: 0.5rem; }
+  #banner h1 { font-size: 2.25rem; }
+  .banner-glass { width: 100%; padding: 1.25rem; }
+}
+
+/* smaller phones */
+@media (max-width: 420px) {
+  #banner p { font-size: 1rem; }
+  .back-to-top { right: 12px; bottom: 12px; width: 44px; height: 44px; }
+}
+
+/* ensure images are lazy-friendly and responsive (override if necessary) */
+img { max-width: 100%; height: auto; display: block; }
+
+/* Extra subtle animations: Fade-in for the entire page once ready */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* small bounce for CTA */
+.bounce {
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-8px);}
+  60% {transform: translateY(-4px);}
+}
+
+
+
+
+
