@@ -1775,16 +1775,17 @@ html[data-theme="light"] .nav.scrolled {
 /* Back to top */
 .back-to-top {
   position: fixed;
-  right: 22px;
+  right: 22px; /* float to right side */
   bottom: 22px;
   width: 48px;
   height: 48px;
-  border-radius: 999px;
-  border: 0;
+  border-radius: 50%;
+  border: none;
   display: grid;
   place-items: center;
-  background: var(--accent-gradient);
+  background: var(--accent-gradient, linear-gradient(135deg, #70c7be, #7f92cf));
   color: white;
+  font-size: 1.2rem;
   box-shadow: 0 10px 26px rgba(3,6,12,0.45);
   cursor: pointer;
   transform: translateY(6px);
@@ -1793,8 +1794,12 @@ html[data-theme="light"] .nav.scrolled {
   transition: opacity 240ms ease, transform 240ms ease;
   z-index: 9999;
 }
-.back-to-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
 /* Footer icon hover */
 .footer-icons i { transition: transform 200ms ease, color 200ms ease; }
 .footer-icons:hover i { color: var(--accent-1); transform: scale(1.14); }
