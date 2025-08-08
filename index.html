@@ -1,126 +1,258 @@
 <!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<html>
-    
-	<head>
-		<title>George Pliagkas</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-      crossorigin="anonymous"
-    />
-	</head>
+  <!-- SEO -->
+  <title>George Pliagkas — Portfolio</title>
+  <meta name="description" content="Portfolio of George Pliagkas — web development, Android apps and interactive projects.">
+  <meta name="keywords" content="George Pliagkas, portfolio, web developer, Android, JavaScript, HTML, CSS">
+  <meta name="author" content="George Pliagkas">
+  <meta name="theme-color" content="#202024">
 
-    <nav id="navbar" class="nav">
-		<ul class="nav-list">
-		  <li>
-			<a href="#top">About</a>
-		  </li>
-		  <li>
-			<a href="#main">Work</a>
-		  </li>
-		  <li>
-			<a href="#footer">Contact</a>
-		  </li>
-		</ul>
-	  </nav>
+  <!-- Open Graph (replace example.com with your domain & absolute image URL) -->
+  <meta property="og:title" content="George Pliagkas — Portfolio">
+  <meta property="og:description" content="Web developer & Android projects by George Pliagkas.">
+  <meta property="og:image" content="https://example.com/images/banner.jpg"> <!-- REPLACE -->
+  <meta property="og:url" content="https://example.com/"> <!-- REPLACE -->
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
 
-	<body id="top">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Passion+One:wght@400&display=swap" rel="stylesheet">
 
-		<section id="banner" data-video='images\banner.jpg'>
-					<div class="inner">
-						<header>
-							<h1>George Pliagkas</h1>
-							<p>Hello World, welcome to my personal page. My name is George and those are some of my projects<br />
-						</header>
-						<a href="#main" class="more">Learn More</a>
-					</div>
-			</section>
+  <!-- FontAwesome (icons) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-			<!-- Main -->
-				<div id="main">
-					<div class="inner">
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="assets/css/main.css" />
 
-					<!-- Boxes -->
-						<div class="thumbnails">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
+</head>
 
-							<div class="box">
-								<a href="https://github.com/Geoplia/Lyrics-WebApp" class="image fit" target="_blank"><img src="images/webDesing.png" alt="" /></a>
-								<div class="inner">
-									<h3>Web Development</h3>
-									<p>"I've worked on some projects on <a href="https://www.freecodecamp.org/Geoplia" target="_blank">freecodecamp.org</a> and I made a web app that finds a song and returns its lyrics."</p>
-									<a href="https://github.com/Geoplia/Lyrics-WebApp" class="button fit" target="_blank">See More</a>
-								</div>
-							</div>
+<body id="top">
 
-							<div class="box">
-								<a href="https://github.com/Geoplia/FitFinder-AndroidApp" class="image fit" target="_blank"><img src="images/android.png" alt="" /></a>
-								<div class="inner">
-									<h3>Android App Development</h3>
-									<p>"I also have experience in Android app development, having worked with Android Studio. Currently, I'm involved in the early-stage development of a fitness app."</p>
-									<a href="https://github.com/Geoplia/FitFinder-AndroidApp" class="button style2 fit" target="_blank">See More</a>
-								</div>
-							</div>
-							
- 							<div class="box">
-								<a href="https://github.com/Geoplia/Greek_Style_Slot_Game" class="image fit" target="_blank"><img src="images/Slot_Game.png" alt="" /></a>
-								<div class="inner">
-									<h3>Slot Game</h3>
-									<p>An interactive slot machine game with the most common used feautures such as payline evaluation, sound integration, and bonus features. The project created with JavaScript, HTML, and CSS, ensuring smooth animations and user-friendly gameplay. 
-                                                                           Also includes functions for handling balance, payouts and more.</p>
-									<a href="https://github.com/Geoplia/Greek_Style_Slot_Game" class="button style3 fit" target="_blank">See More</a>
-								</div>
-							</div>
-							
-							<div class="box">
-								<a href="#top" class="image fit"><img src="images/ComingSoon.jpg" alt="" /></a>
-								<div class="inner">
-									<h3>More to come</h3>
-									<p>"I'm constantly on the lookout for new opportunities to expand my skills and knowledge. Excited for the journey ahead, I'm ready to face challenges everyday"</p>
-									<a href="#top" class="button style3 fit" target="_blank">More to come</a>
-								</div>
-							</div>
-							
+  <!-- NAV (sticky, with mobile toggle + theme toggle) -->
+  <nav id="navbar" class="nav" role="navigation" aria-label="Main navigation">
+    <!-- left: brand (clickable) -->
+    <a class="nav-brand" href="#top" aria-label="Homepage">George Pliagkas</a>
 
-						</div>
+    <!-- mobile toggle -->
+    <button id="navToggle" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <i class="fas fa-bars" aria-hidden="true"></i>
+    </button>
 
-					</div>
-				</div>
+    <!-- links -->
+    <ul class="nav-list" role="menubar">
+      <li role="none"><a class="nav-link" role="menuitem" href="#top">About</a></li>
+      <li role="none"><a class="nav-link" role="menuitem" href="#main">Work</a></li>
+      <li role="none"><a class="nav-link" role="menuitem" href="#footer">Contact</a></li>
+    </ul>
 
-			<!-- Footer -->
-				<footer id="footer">
-					<h2>Contact Me</h2>
-                    <p>Stay connected! Feel free to reach out to me on my social media profiles. Looking forward to hearing from you </p>
-					<div class="inner">
-					<a href="https://www.linkedin.com/in/george-pliagkas/" target="_blank" class="btn contact-details footer-icons"
-						><i class="fab fa-linkedin"></i> LinkedIn</a>
-					<a
-						href="https://www.facebook.com/george.pliagkas/?locale=el_GR"
-						target="_blank"
-						class="btn contact-details footer-icons"
-						><i class="fab fa-facebook-square"></i> Facebook</a
-					  >
-					  <a
-						id="profile-link"
-						href="https://github.com/Geoplia"
-						target="_blank"
-						class="btn contact-details footer-icons"
-						><i class="fab fa-github"></i> GitHub</a>
-					  <a href="emailto:giorgos_plia@yahoo.gr" class="btn contact-details footer-icons"><i class="fas fa-at"></i> Send a mail</a>
-					  <a href="tel:+30 695 1104808" class="btn contact-details footer-icons"
-						><i class="fas fa-mobile-alt"></i> Call me</a
-					  >
-					</div>
-				</footer>
+    <!-- theme toggle -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false" title="Toggle light / dark">
+      <i class="fas fa-moon" aria-hidden="true"></i>
+    </button>
+  </nav>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<!--<script src="assets/js/jquery.poptrox.min.js"></script> -->
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+  <!-- Banner -->
+  <section id="banner" data-video="images/banner.jpg" class="fade-in">
+    <div class="inner">
+      <!-- glass card (glassmorphism) -->
+      <div class="banner-glass reveal">
+        <header>
+          <h1>George Pliagkas</h1>
+          <p>Hello world — welcome to my personal page. I'm George and these are a few of my projects.</p>
+        </header>
+        <a href="#main" class="more bounce" aria-label="Learn more about my work">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-	</body>
+  <!-- Main -->
+  <div id="main">
+    <div class="inner">
+
+      <h2 class="section-title reveal">Work</h2>
+
+      <!-- Boxes (each box will animate in on scroll) -->
+      <div class="thumbnails">
+
+        <div class="box reveal">
+          <a href="https://github.com/Geoplia/Lyrics-WebApp" class="image fit" target="_blank" rel="noopener">
+            <img src="images/webDesing.png" alt="Web design project thumbnail" loading="lazy" />
+          </a>
+          <div class="inner">
+            <h3>Web Design</h3>
+            <p>
+              I built several projects on <a href="https://www.freecodecamp.org/Geoplia" target="_blank" rel="noopener">freecodecamp.org</a>.
+              Also I made a web app that finds a song and returns its lyrics.
+            </p>
+            <a href="https://github.com/Geoplia/Lyrics-WebApp" class="button fit" target="_blank" rel="noopener">See More</a>
+          </div>
+        </div>
+
+        <div class="box reveal">
+          <a href="https://github.com/Geoplia/FitFinder-AndroidApp" class="image fit" target="_blank" rel="noopener">
+            <img src="images/android.png" alt="Android app thumbnail" loading="lazy" />
+          </a>
+          <div class="inner">
+            <h3>Android App Design</h3>
+            <p>Experience with Android Studio; currently early-stage development of a fitness app.</p>
+            <a href="https://github.com/Geoplia/FitFinder-AndroidApp" class="button style2 fit" target="_blank" rel="noopener">See More</a>
+          </div>
+        </div>
+
+        <div class="box reveal">
+          <a href="https://github.com/Geoplia/Greek_Style_Slot_Game" class="image fit" target="_blank" rel="noopener">
+            <img src="images/Slot_Game.png" alt="Slot game thumbnail" loading="lazy" />
+          </a>
+          <div class="inner">
+            <h3>Slot Game</h3>
+            <p>An interactive slot machine game (JS/HTML/CSS) with payouts, paylines and bonus features.</p>
+            <a href="https://github.com/Geoplia/Greek_Style_Slot_Game" class="button style3 fit" target="_blank" rel="noopener">See More</a>
+          </div>
+        </div>
+
+        <div class="box reveal">
+          <a href="#top" class="image fit" rel="noopener"><img src="images/ComingSoon.jpg" alt="Coming soon thumbnail" loading="lazy" /></a>
+          <div class="inner">
+            <h3>More to come</h3>
+            <p>Always learning — more projects and improvements on the way.</p>
+            <a href="#top" class="button style3 fit">More to come</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <h2>Contact Me</h2>
+    <p>Stay connected — feel free to reach out on social media or by email.</p>
+    <div class="inner">
+      <a href="https://www.facebook.com/george.pliagkas/?locale=el_GR" target="_blank" rel="noopener" class="btn contact-details footer-icons"><i class="fab fa-facebook-square"></i> Facebook</a>
+      <a id="profile-link" href="https://github.com/Geoplia" target="_blank" rel="noopener" class="btn contact-details footer-icons"><i class="fab fa-github"></i> GitHub</a>
+      <a href="mailto:giorgos_plia@yahoo.gr" class="btn contact-details footer-icons"><i class="fas fa-at"></i> Send an e-mail</a>
+      <a href="tel:+306951104808" class="btn contact-details footer-icons"><i class="fas fa-mobile-alt"></i> Call me</a>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">&uarr;</button>
+
+  <!--  scripts  -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <!--<script src="assets/js/jquery.poptrox.min.js"></script>-->
+  <script src="assets/js/skel.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/smooth-scroll.js"></script>
+
+  <!-- Enhancement script (theme toggle, sticky nav, reveal animation, back-to-top, mobile nav) -->
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const nav = document.getElementById('navbar');
+      const themeToggle = document.getElementById('themeToggle');
+      const navToggle = document.getElementById('navToggle');
+      const backToTop = document.getElementById('backToTop');
+
+      // Robust helper to safely set the icon
+      function setThemeIcon(theme) {
+        if (!themeToggle) return;
+        themeToggle.innerHTML = theme === 'light' ? '<i class="fas fa-sun" aria-hidden="true"></i>' : '<i class="fas fa-moon" aria-hidden="true"></i>';
+        themeToggle.setAttribute('aria-pressed', theme === 'light');
+      }
+
+      // Apply saved theme or system preference
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        setThemeIcon(theme);
+      }
+
+      // Initialize theme
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved) applyTheme(saved);
+        else {
+          const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+          applyTheme(prefersLight ? 'light' : 'dark');
+        }
+      } catch (e) {
+        // localStorage might be blocked; fallback:
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        root.setAttribute('data-theme', prefersLight ? 'light' : 'dark');
+        setThemeIcon(prefersLight ? 'light' : 'dark');
+      }
+
+      // Theme toggle button (guard)
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+          applyTheme(current === 'dark' ? 'light' : 'dark');
+        });
+      }
+
+      // Mobile nav toggle
+      if (navToggle && nav) {
+        navToggle.addEventListener('click', () => {
+          const open = nav.classList.toggle('open');
+          navToggle.setAttribute('aria-expanded', open);
+        });
+      }
+
+      // Close mobile nav when clicking a link
+      document.querySelectorAll('#navbar .nav-list a').forEach(a => {
+        a.addEventListener('click', () => nav.classList.remove('open'));
+      });
+
+      // Sticky nav shadow & back-to-top visibility
+      function onScroll() {
+        if (window.scrollY > 20) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+
+        if (window.scrollY > 420) backToTop.classList.add('visible');
+        else backToTop.classList.remove('visible');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // Smooth back to top
+      if (backToTop) backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // Reveal on scroll using IntersectionObserver
+      const reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => io.observe(el));
+      } else {
+        // fallback: just show them
+        reveals.forEach(el => el.classList.add('active'));
+      }
+
+      // Accessibility: focus outlines (only after keyboard navigation)
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') document.body.classList.add('show-focus-outlines');
+      });
+
+    })();
+  </script>
+
+</body>
 </html>
+
+
